@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="loginPane" prefHeight="400" prefWidth="800" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.omex_quiz.LoginController">
+    <children>
+        <VBox pickOnBounds="true" alignment="CENTER">
+            <ImageView fitHeight="${loginPane.height}" preserveRatio="true">
+                <image>
+                    <Image url="@/Images/LoginDoko.jpg" backgroundLoading="true" smooth="true"/>
+                </image>
+            </ImageView>
+        </VBox>
+        <VBox spacing="20" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="400" style="-fx-background-color: #ffffff;">
+            <padding>
+                <Insets top="25" right="0" left="25" bottom="10"/>
+            </padding>
+            <ImageView fitHeight="200" preserveRatio="true" pickOnBounds="true" smooth="true">
+                <image>
+                    <Image url="@/Images/OMEXQUIZ_LOGO.png"/>
+                </image>
+            </ImageView>
+
+            <HBox spacing="20">
+                <VBox spacing="20">
+                    <Label fx:id="username" text="Benutzername" />
+                    <Label fx:id="passwordLabel" text="Passwort" />
+                </VBox>
+                <VBox spacing="10">
+                    <TextField fx:id="usernameField" prefWidth="200.0" />
+                    <HBox>
+                        <TextField fx:id="passwordValueField" prefHeight="27.0" prefWidth="200.0" visible="false" onAction="#handleLoginButtonAction"/>
+                        <PasswordField fx:id="passwordField" prefHeight="27.0" prefWidth="200.0"  onAction="#handleLoginButtonAction">
+                            <HBox.margin>
+                                <Insets top="0.0" right="0" bottom="0.0" left="-200" />
+                            </HBox.margin>
+                        </PasswordField>
+                        <Button fx:id="showPasswordButton" mnemonicParsing="false" onAction="#handleShowPasswordButtonAction" text="Show" />
+                    </HBox>
+                    <HBox spacing="35">
+                        <Hyperlink onMouseClicked="#signuplink" text="hast du kein Konto?" />
+                        <HBox spacing="5">
+                            <Button onMouseClicked="#gastclicked" text="Als Gast" />
+                            <Button fx:id="loginButton" text="Login" onAction="#handleLoginButtonAction" />
+                        </HBox>
+                    </HBox>
+                    <Label fx:id="usernamecheckl" text="unbekannter Benutzername oder falsches Passwort" visible="false" style="-fx-text-fill: #ff0000"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

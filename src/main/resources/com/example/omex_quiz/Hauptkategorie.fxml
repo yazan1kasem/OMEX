@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.geometry.Insets?>
+<AnchorPane prefHeight="750.0" prefWidth="1350.0" maxHeight="750.0" maxWidth="1350.0"
+            xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.omex_quiz.HauptkategorieController"
+            fx:id="HKAnchorPane">
+
+    <children>
+        <Pane prefHeight="400.0" prefWidth="700.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+        <HBox layoutY="150">
+            <VBox alignment="CENTER" spacing="50.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                <Label alignment="CENTER" text=" Über welche Kategorie möchten Sie mehr erfahren? "
+                       style="-fx-font-size: 24pt; -fx-text-fill: white; -fx-background-color: #1b1b5e; -fx-background-radius: 20; -fx-background-insets: 0 0 0 0; -fx-padding: 5px;" />
+                <HBox spacing="0.0" alignment="CENTER" >
+                    <Region HBox.hgrow="ALWAYS" />
+                    <VBox spacing="10.0" alignment="CENTER" >
+                        <Button fx:id="Knochen" prefWidth="200.0" prefHeight="200.0" onAction="#handleHyperlinkAction"
+                                style="-fx-background-color: transparent;">
+                            <graphic>
+                                <!--<ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" >
+                                    <Image url="/Images/Knochen.png" />
+                                </ImageView>-->
+                                <ImageView fx:id="imageViewKnochen" fitHeight="195" fitWidth="170"/>
+                            </graphic>
+                        </Button>
+                        <StackPane alignment="CENTER">
+                            <Label text="Knochen" style="-fx-font-size: 24pt; -fx-text-fill: white; -fx-background-color: #5454d2; -fx-background-radius: 15; -fx-background-insets: 0 0 0 0; -fx-padding: 5px;" >
+                                <Hyperlink fx:id="" style="-fx-background-color: transparent; -fx-padding: 5px;" />
+                            </Label>
+                        </StackPane>
+                    </VBox>
+                    <VBox spacing="10.0" alignment="CENTER">
+                        <Button fx:id="Gelenke" prefWidth="200.0" prefHeight="200.0" onAction="#handleHyperlinkAction"
+                                style="-fx-background-color: transparent;">
+                            <graphic>
+                                <!--<ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="/Images/Muskeln.png" />
+                                    </image>
+                                </ImageView>-->
+                                <ImageView fx:id="imageViewMuskel" fitHeight="195" fitWidth="170" />
+                            </graphic>
+                        </Button>
+                        <Label alignment="CENTER" text="  Gelenke  " style="-fx-font-size: 24pt; -fx-text-fill: white; -fx-background-color: #5454d2; -fx-background-radius: 15; -fx-background-insets: 0 0 0 0; -fx-padding: 5px;" />
+                    </VBox>
+                    <VBox spacing="10.0" alignment="CENTER" >
+                        <Button fx:id="Blut" prefWidth="200.0" prefHeight="200.0" onAction="#handleHyperlinkAction"
+                                style="-fx-background-color: transparent;">
+                            <graphic>
+                                <!--<ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="/Images/Blut.png" />
+                                    </image>
+                                </ImageView>-->
+                                <ImageView fx:id="imageViewBlut" fitHeight="195" fitWidth="170" />
+                            </graphic>
+                        </Button>
+                        <Label alignment="CENTER" text="  Blut  " style="-fx-font-size: 24pt; -fx-text-fill: white; -fx-background-color: #5454d2; -fx-background-radius: 15; -fx-background-insets: 0 0 0 0; -fx-padding: 5px;" />
+                    </VBox>
+                    <VBox spacing="10.0" alignment="CENTER" >
+                        <Button fx:id="Nervensystem" prefWidth="200.0" prefHeight="200.0" onAction="#handleHyperlinkAction"
+                                style="-fx-background-color: transparent;">
+                            <graphic>
+                                <!--<ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="/Images/Nervensystem.png" />
+                                    </image>
+                                </ImageView>-->
+                                <ImageView fx:id="imageViewNervensystem" fitHeight="195" fitWidth="170" />
+                            </graphic>
+                        </Button>
+                        <Label alignment="CENTER" text=" Nervensystem " style="-fx-font-size: 24pt; -fx-text-fill: white; -fx-background-color: #5454d2; -fx-background-radius: 15; -fx-background-insets: 0 0 0 0; -fx-padding: 5px;" />
+                    </VBox>
+                    <VBox spacing="10.0" alignment="CENTER" >
+                        <Button fx:id="Organe" prefWidth="200.0" prefHeight="200.0" onAction="#handleHyperlinkAction"
+                                style="-fx-background-color: transparent;">
+                            <graphic>
+                                <!--<ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds ="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="/Images/Organe.png" />
+                                    </image>
+                                </ImageView>-->
+                                <ImageView fx:id="imageViewOrgane" fitHeight="195" fitWidth="170" />
+                            </graphic>
+                        </Button>
+                        <Label alignment="CENTER" text="  Organe  " style="-fx-font-size: 24pt; -fx-text-fill: white; -fx-background-color: #5454d2; -fx-background-radius: 15; -fx-background-insets: 0 0 0 0; -fx-padding: 5px;" />
+                    </VBox>
+                </HBox>
+            </VBox>
+        </HBox>
+    </children>
+    <Region HBox.hgrow="ALWAYS" />
+</AnchorPane>

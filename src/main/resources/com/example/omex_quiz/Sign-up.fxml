@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<AnchorPane fx:id="signupPane" prefHeight="400" prefWidth="800" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.omex_quiz.signupController">
+    <children>
+        <VBox pickOnBounds="true" alignment="CENTER" AnchorPane.rightAnchor="0">
+            <ImageView fitHeight="${signupPane.height}" preserveRatio="true" pickOnBounds="true">
+                <image>
+                    <Image url="@/Images/LoginDoko.jpg" backgroundLoading="true" smooth="true" />
+                </image>
+            </ImageView>
+        </VBox>
+        <VBox spacing="20" alignment="CENTER" AnchorPane.rightAnchor="400" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+              style="-fx-background-color: #ffffff;">
+            <padding>
+                <Insets top="15" right="25" left="25" bottom="10" />
+            </padding>
+            <VBox spacing="10" alignment="CENTER">
+                <ImageView fitHeight="200" preserveRatio="true">
+                    <image>
+                        <Image url="/Images/OMEXQUIZ_LOGO.png" />
+                    </image>
+                </ImageView>
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <padding>
+                        <Insets top="0" right="0" left="25" bottom="0" />
+                    </padding>
+                    <HBox spacing="5" >
+                        <TextField fx:id="Benutzername" promptText="Benutzername" prefWidth="150.0" >
+                            <VBox.margin>
+                                <Insets top="0.0" right="50" bottom="0.0" left="0" />
+                            </VBox.margin>
+                        </TextField>
+                        <Label fx:id="benutzernamecheckl" visible="false" text="*" style="-fx-text-fill: #ff0000; -fx-font-size: 20" />
+                    </HBox>
+                    <Label fx:id="usernamecheckl" text="dieser Benutzername existiert bereits" style="-fx-text-fill: #ff0000" visible="false">
+                        <VBox.margin>
+                            <Insets top="-13"/>
+                        </VBox.margin>
+                        <padding>
+                            <Insets bottom="-10"/>
+                        </padding>
+                    </Label>
+                    <HBox>
+                        <TextField fx:id="passwordValueField" visible="false" promptText="Passwort" prefHeight="27.0" prefWidth="200.0" />
+                        <PasswordField fx:id="passwordField" promptText="Passwort" prefHeight="27.0" prefWidth="200.0">
+                            <HBox.margin>
+                                <Insets top="0.0" right="0" bottom="0.0" left="-200" />
+                            </HBox.margin>
+                        </PasswordField>
+                        <Button fx:id="showPasswordButton" mnemonicParsing="false" text="Show" onAction="#show"/>
+                        <Label fx:id="passwordValuecheckl" visible="false" text="*" style="-fx-text-fill: #ff0000; -fx-font-size: 20;" />
+                    </HBox>
+                    <HBox>
+                        <TextField fx:id="passwordbestaetigungValueLabel" visible="false" promptText="Passwort bestätigen" prefHeight="27.0" prefWidth="200.0" />
+                        <PasswordField fx:id="passwordbestaetigungField" promptText="Passwort bestätigen" prefHeight="27.0" prefWidth="200.0">
+                            <HBox.margin>
+                                <Insets top="0.0" right="0" bottom="0.0" left="-200" />
+                            </HBox.margin>
+                        </PasswordField>
+                        <Button fx:id="showPasswordbestaetigungButton" mnemonicParsing="false"  text="Show" onAction="#show"/>
+                        <Label fx:id="passwordbestaetigungValuecheckl" visible="false" text="*" style="-fx-text-fill: #ff0000; -fx-font-size: 20" />
+                    </HBox>
+                    <VBox spacing="0">
+                        <HBox spacing="20">
+                            <Button text="Sign Up" onAction="#Signingup"/>
+                            <Hyperlink onMouseClicked="#loginlink" text="ich habe ein Konto" alignment="CENTER_RIGHT" />
+                        </HBox>
+                        <Label fx:id="passwortcheckl" text="die passworter stimmen nicht überein" style="-fx-text-fill: #ff0000" visible="false"/>
+                    </VBox>
+                </VBox>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

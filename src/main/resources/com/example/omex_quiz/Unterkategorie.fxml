@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.omex_quiz.UnterkategorieController"
+            prefHeight="750.0" prefWidth="1200.0"
+            fx:id="unterkategorieAnchorPane">
+
+    <children>
+        <VBox alignment="CENTER" spacing="20" prefHeight="650.0" prefWidth="800.0" style="-fx-padding: 30; -fx-background-color: #252585; -fx-background-radius: 50; -fx-spacing: 10;"
+        layoutX="150" layoutY="25">
+            <Label text="Über welche Kategorie möchten Sie mehr erfahren?"
+                   style="-fx-font-size: 24pt; -fx-text-fill: white; -fx-background-color: #1b1b5e; -fx-background-radius: 20; -fx-background-insets: 0 0 0 0; -fx-padding: 5px;" />
+            <ListView fx:id="unterkategorieListView" layoutX="50" layoutY="50" prefWidth="200" prefHeight="500" style="-fx-font-size: 18pt; -fx-text-fill: white; -fx-background-color: Transparent; -fx-background-radius: 20;"/>
+        </VBox>
+
+        <ImageView fx:id="imageViewDoktor1" fitHeight="350" translateX="875" translateY="290"/>
+
+        <Button fx:id="zurueckButton" text="     Zurück     " onAction="#zurueckButtonAction" style="-fx-padding: 5; -fx-spacing: 20; -fx-font-size: 20;
+                                                                      -fx-alignment: TOP_LEFT; -fx-background-color: #5454D2FF;
+                                                                      -fx-background-radius: 15; -fx-text-fill: white;"
+                layoutX="20" layoutY="20"/>
+        <Button fx:id="weiterButton" text="     zum Quiz     " onAction="#weiterButtonAction" style="-fx-padding: 5; -fx-spacing: 20; -fx-font-size: 20;
+                                                                      -fx-alignment: BOTTOM_RIGHT; -fx-background-color: #5454D2FF;
+                                                                      -fx-background-radius: 15; -fx-text-fill: white;"
+                layoutX="750" layoutY="590">
+
+        </Button>
+    </children>
+</AnchorPane>

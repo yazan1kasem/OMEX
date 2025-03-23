@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.util.Callback?>
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.omex_quiz.METABereich_Controller" style="-fx-background-color: #3636c0;">
+    <children>
+        <TableView  fx:id="tableView" visible="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="50.0" >
+            <columns>
+                <TableColumn fx:id="Frageid_column" prefWidth="${tableView.width/24}" text="id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="HK_column" prefWidth="${tableView.width/24}" text="HK">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="hauptkategorie"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="UK_column" prefWidth="${tableView.width/24}" text="UK">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="unterkategorie" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="Frage_column" prefWidth="${tableView.width/6}" text="Frage">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="frage" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="erste_A_column"  prefWidth="${tableView.width/8}" text="A1">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="antwort1" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="zweite_A_column" prefWidth="${tableView.width/8}" text="A2">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="antwort2" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="dritte_A_column" prefWidth="${tableView.width/8}" text="A3">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="antwort3" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="vierte_A_column" prefWidth="${tableView.width/8}" text="A4">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="antwort4" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="RA_column" prefWidth="${tableView.width/24}" text="RA">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="richtigeAntwort" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="Erklärung_column" prefWidth="${tableView.width/4}" text="Erklärung">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="erklaeren" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <TableView fx:id="Usertable" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="50.0">
+            <columns>
+                <TableColumn fx:id="UserId_column" prefWidth="${Usertable.width/9}" text="id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="Username_column" prefWidth="${Usertable.width/4.5}" text="Username">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="username" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="Userpasswort_column" prefWidth="${Usertable.width/4.5}" text="passwort">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="password" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="UserScore_column" prefWidth="${Usertable.width/4.5}" text="Score">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="score" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="Userlevel_column" prefWidth="${Usertable.width/4.5}" text="Level">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="level" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <TextField fx:id="searchBar" layoutX="10.0" layoutY="14.0" maxWidth="600" onAction="#Suchen" promptText="Suche nach Daten..." AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="350.0" />
+        <Button fx:id="searchbutton" layoutX="615.0" layoutY="14.0" onAction="#Suchen" text="Suche" AnchorPane.rightAnchor="300.0" />
+        <VBox alignment="TOP_CENTER" layoutY="50.0" prefHeight="600.0" prefWidth="220.0" spacing="20.0" AnchorPane.bottomAnchor="50" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+            <VBox fx:id="FragenFields" spacing="20" >
+                <TextField fx:id="Frageid_Field" promptText="Frageid" prefWidth="220" />
+                <ChoiceBox fx:id="HauptKategorieChoice" prefWidth="220.0" prefHeight="10" />
+                <ChoiceBox fx:id="UntereKategorieChoice" prefWidth="220.0" maxHeight="100">
+                    <items>
+                    </items>
+                </ChoiceBox>
+                <TextArea fx:id="Frage_Field" promptText="Frage" wrapText="true" />
+                <TextArea fx:id="erste_A_Field" promptText="1.Antwort" wrapText="true" />
+                <TextArea fx:id="zweite_A_Field" promptText="2.Antwort" wrapText="true" />
+                <TextArea fx:id="dritte_A_Field" promptText="3.Antwort" wrapText="true" />
+                <TextArea fx:id="vierte_A_Field" promptText="4.Antwort" wrapText="true" />
+                <TextField fx:id="RA_Field" prefWidth="30" promptText="richtige Antwort" />
+                <TextArea fx:id="Erklärung_Field" prefHeight="107.0" prefWidth="220.0" promptText="Erklärung" wrapText="true"/>
+            </VBox>
+            <HBox alignment="BOTTOM_CENTER" spacing="10.0">
+                <Button fx:id="insertButton" onAction="#insertButtonClicked" text="Einfügen" />
+                <Button fx:id="deleteButton" onAction="#deleteButtonClicked" text="Löschen" />
+                <Button fx:id="updateButton" onAction="#updateButtonClicked" text="Aktualisieren" />
+            </HBox>
+        </VBox>
+        <VBox fx:id="UserFields" visible="false" prefWidth="220.0" spacing="20" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="50">
+            <TextField fx:id="UidField" promptText="Userid" />
+            <TextField fx:id="UnameField" promptText="Username"/>
+            <TextField fx:id="UpasswortField" promptText="passwort" />
+            <TextField fx:id="UScoreField" promptText="Score"/>
+            <TextField fx:id="ULevelField" promptText="Level"/>
+        </VBox>
+        <HBox spacing="10" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0">
+            <RadioButton fx:id="userRadioButton" text="User" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="100" onAction="#radiobuttonClicked" >
+                <toggleGroup>
+                    <ToggleGroup fx:id="group" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="questionsRadioButton" text="Fragen" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="150" onAction="#radiobuttonClicked" selected="true">
+                <toggleGroup>
+                    <fx:reference source="group" />
+                </toggleGroup>
+            </RadioButton>
+        </HBox>
+        <Label fx:id="ConnectionL" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+    </children>
+</AnchorPane>

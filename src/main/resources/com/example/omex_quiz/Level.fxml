@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Ellipse?>
+
+<fx:root fx:id="rootPane" type="javafx.scene.layout.AnchorPane"
+         xmlns:fx="http://javafx.com/fxml"
+         xmlns="http://javafx.com/javafx"
+         prefWidth="250" prefHeight="600"
+         fx:controller="com.example.omex_quiz.LevelController">
+
+    <children>
+        <HBox prefWidth="250" prefHeight="600" style="-fx-background-color: #5454D2FF; -fx-padding: 10; -fx-background-radius: 30;"
+              layoutX="20" layoutY="80">
+            <Button fx:id="settingsButton" onAction="#handleSettingsButtonAction" style="-fx-background-image: url('/Images/gear.png');
+                -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;
+                -fx-text-fill: transparent; -fx-background-color: transparent;"
+                    translateX="-5" translateY="545">
+                <graphic>
+                    <ImageView fx:id="imageViewGear" fitHeight="30" fitWidth="30"/>
+                </graphic>
+            </Button>
+            <Button fx:id="exitButton" onAction="#handleExitButtonAction" style="-fx-background-image: url('/Images/logout.png');
+                -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;
+                -fx-text-fill: transparent; -fx-background-color: transparent;"
+                    translateX="150" translateY="545">
+                <graphic>
+                    <ImageView fx:id="imageViewLogout" fitHeight="30" fitWidth="30" />
+                </graphic>
+            </Button>
+            <VBox alignment="CENTER"  style="-fx-padding: -80,0,0,0">
+                <StackPane>
+                    <Rectangle x="30" y="30" width="100" height="100" stroke="black" strokeWidth="3" fill="transparent" />
+                    <ImageView>
+                        <Image url="/Images/PlatzhalterPrfbild.png" />
+                    </ImageView>
+                </StackPane>
+                <StackPane>
+                    <Ellipse fx:id="oval" fill="LIGHTGRAY" radiusX="30" radiusY="15" />
+                    <Label fx:id="label" text="test"/>
+                </StackPane>
+                <Label fx:id="lblUsername" style="-fx-font-size: 20pt; -fx-text-fill: white;" />
+                <VBox alignment="CENTER" spacing="5" >
+                    <!--<ProgressBar fx:id="progressBar" prefWidth="200" progress="5"/>-->
+                    <ProgressBar fx:id="progressBar" prefWidth="200" progress="0"/>
+                    <Label fx:id="ausgabeLabel" style="-fx-font-size: 10pt; -fx-text-fill: white;" />
+                    <!--<Label fx:id="anzahlFragenLabel" style="-fx-font-size: 10pt; -fx-text-fill: white;" />-->
+                    <!--<Label fx:id="anzahlGemachteFragenLabel" style="-fx-font-size: 10pt; -fx-text-fill: white;" />-->
+                </VBox>
+            </VBox>
+        </HBox>
+        <Label fx:id="ConnectionL" text="Connection established" style="-fx-text-fill: #252585; -fx-background-color: #b4f1a7;
+               -fx-background-radius: 70;" prefWidth="220" layoutX="35" layoutY="95" alignment="CENTER"/>
+    </children>
+</fx:root>

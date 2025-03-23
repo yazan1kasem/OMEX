@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.Circle?>
+<AnchorPane prefHeight="600" prefWidth="1000" style="-fx-background-color: #3636c0;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.omex_quiz.FragenController" fx:id="fragenAnchorPane">
+    <children>
+        <ImageView fx:id="doktor2" fitWidth="250" preserveRatio="true" AnchorPane.topAnchor="40" AnchorPane.rightAnchor="350"/>
+
+        <Label fx:id="ConnectionL" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20" text="Label" />
+        <Label fx:id="frage"  AnchorPane.rightAnchor="500" AnchorPane.topAnchor="100" AnchorPane.leftAnchor="30" prefHeight="${fragenAnchorPane.prefWidth/fragenAnchorPane.width * 200}" minWidth="200" maxHeight="200" text="Fragen aus der Datenbank " wrapText="true" textAlignment="CENTER" style="-fx-font-size: 15pt; -fx-text-fill: white; -fx-background-color: #000000; -fx-background-radius: 50; -fx-background-insets: 0 0 0 0; -fx-padding: 10px; "/>
+        <VBox fx:id="Antwortbox" spacing="20" style="-fx-start-margin: 20,0,0,0" AnchorPane.rightAnchor="200" AnchorPane.topAnchor="310" AnchorPane.leftAnchor="30" AnchorPane.bottomAnchor="100">
+            <HBox spacing="20" >
+                <Button fx:id="antwort1" mnemonicParsing="false" minHeight="${Antwortbox.height/3}" minWidth="${Antwortbox.width/3}" text="Antwort1" wrapText="true" style="-fx-background-radius: 30; -fx-background-color: #4472C4; -fx-font-size: 20" textFill="white" onAction="#Checkantwort"/>
+                <Button fx:id="antwort2" mnemonicParsing="false" minHeight="${Antwortbox.height/3}" minWidth="${Antwortbox.width/3}" text="Antwort2" wrapText="true" style="-fx-background-radius: 30; -fx-background-color: #4472C4; -fx-font-size: 20" textFill="white" onAction="#Checkantwort"/>
+            </HBox>
+            <HBox spacing="20">
+                <Button fx:id="antwort3" mnemonicParsing="false" minHeight="${Antwortbox.height/3}" minWidth="${Antwortbox.width/3}" text="Antwort3" wrapText="true" style="-fx-background-radius: 30; -fx-background-color: #4472C4; -fx-font-size: 20" textFill="white" onAction="#Checkantwort"/>
+                <Button fx:id="antwort4" mnemonicParsing="false" minHeight="${Antwortbox.height/3}" minWidth="${Antwortbox.width/3}" text="Antwort4" wrapText="true" style="-fx-background-radius: 30; -fx-background-color: #4472C4; -fx-font-size: 20" textFill="white" onAction="#Checkantwort"/>
+            </HBox>
+        </VBox>
+        <Button fx:id="nextbtn" AnchorPane.bottomAnchor="50" AnchorPane.leftAnchor="20"  prefHeight="50" mnemonicParsing="false" onAction="#nächstefrage" text="Save" textAlignment="CENTER" style="-fx-background-radius: 30; -fx-background-color: #4472C4; -fx-font-size: 20"  textFill="white"/>
+        <Button fx:id="zurueckButton" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="20" onAction="#zurueckButtonAction" style="-fx-background-color: transparent; -fx-padding: 5; -fx-spacing: 20; -fx-font-size: 20; -fx-alignment: BOTTOM_RIGHT; -fx-background-color: #5454D2FF; -fx-background-radius: 15; -fx-text-fill: white;-fx-padding: 5 20 5 20;" text="Zurück" />
+        <Label fx:id="erklaeren" minWidth="200" AnchorPane.rightAnchor="100" AnchorPane.bottomAnchor="100" AnchorPane.topAnchor="50" text=" " textAlignment="RIGHT" style="-fx-font-size: 10pt; -fx-text-fill: white; -fx-background-color: #4472c4; "/>
+        <VBox AnchorPane.topAnchor="100" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20" spacing="30">
+            <Circle fx:id="erstefragekreis" style="-fx-fill: #4472C4;" radius="30" />
+            <Circle fx:id="zweitefragekreis" style="-fx-fill: #4472C4;" radius="30" />
+            <Circle fx:id="drittefragekreis" style="-fx-fill: #4472C4;" radius="30" />
+            <Circle fx:id="viertefragekreis" style="-fx-fill: #4472C4;" radius="30" />
+            <Circle fx:id="fuenftefragekreis" style="-fx-fill: #4472C4;" radius="30" />
+        </VBox>
+
+    </children>
+</AnchorPane>
+
